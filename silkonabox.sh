@@ -2,6 +2,8 @@
 
 # Automatic SiLK Installation Script
 # Chris Sanders & Jason Smith
+# ---
+# Updated by Ethan Bayne
 
 exec >  >(tee -a silkinstall.log)
 exec 2> >(tee -a silkinstall.log >&2)
