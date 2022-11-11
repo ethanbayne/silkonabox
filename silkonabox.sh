@@ -120,8 +120,7 @@ sudo apt-get update -qq
 
 # Install Prerequisites
 echo -e "$(tput setaf 6)Installing Prerequisites. This might require your password and take a few minutes.$(tput sgr0)"
-sudo DEBIAN_FRONTEND=noninteractive apt-get install --yes --forceyes glib2.0 libglib2.0-dev libpcap-dev g++ libpython2.7-dev make gcc unzip libpcre3 libpcre3-dev
-sudo ldconfig
+sudo DEBIAN_FRONTEND=noninteractive apt-get install --yes glib2.0 libglib2.0-dev libpcap-dev g++ libpython2.7-dev make gcc unzip libpcre3 libpcre3-dev
 
 if which rwp2yaf2silk > /dev/null; then
         echo -e "$(tput setaf 2)It looks like SiLK might already be installed.$(tput sgr0)"
@@ -252,6 +251,8 @@ if [ ! -z "$silkstartnow" ]; then
   rwflowpackstatus=$(echo "---rwflowpack pid = $pidrwflowpack")
   yafstatus=$(echo "---yaf pid = $pidyaf")
 fi
+
+sudo ldconfig
 
 echo -e "$(tput setaf 2)SiLK and YAF installation finished.$(tput sgr0)"
 echo -e "$(tput setaf 2)$onBoot\n$startNow\n$rwflowpackstatus\n$yafstatus$(tput sgr0)"
